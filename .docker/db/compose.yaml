@@ -1,0 +1,21 @@
+version: "3.9"
+
+services:
+  mysql:
+    image: mysql:8.0.28
+    platform: linux/amd64
+    container_name: mysql-container
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: MoriSano
+      TZ: "Asia/Tokyo"
+    volumes:
+     - type: bind
+       source: "./my.cnf"
+       target:  "/etc/mysql/conf.d/my.cnf"
+     - type: bind
+       source: "./init.d"
+       target: "/docker-entrypoint-initdb.d"
+       
