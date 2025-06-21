@@ -1,7 +1,7 @@
 version: 2
 updates:
   - package-ecosystem: "gradle"
-    directories: "MovieApp_BE-develop/build.gradle"
+    directories: "/"
     schedule:
       interval: "daily"
     open-pull-requests-limit: 10
